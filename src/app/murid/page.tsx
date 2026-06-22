@@ -1,6 +1,8 @@
-import { supabase } from '@/lib/supabase/client'
+import { getSupabaseClient } from '@/lib/supabase/client'
 
 export default async function DataMuridPage() {
+  const supabase = getSupabaseClient()
+
   const { data: muridList, error } = await supabase
     .from('murid')
     .select('*')
@@ -30,7 +32,8 @@ export default async function DataMuridPage() {
                 <th className="px-4 py-3 font-medium">Nama Lengkap</th>
                 <th className="px-4 py-3 font-medium">Tgl Registrasi</th>
                 <th className="px-4 py-3 font-medium">Jenis Kelamin</th>
-                <th className="px-4 py-3 font-medium">Usia</th>
+                <th className="px-4 py-3 font-medium">Usia Saat Registrasi</th>
+                <th className="px-4 py-3 font-medium">Alamat</th>
                 <th className="px-4 py-3 font-medium">Kota</th>
                 <th className="px-4 py-3 font-medium">No WhatsApp</th>
                 <th className="px-4 py-3 font-medium">Pekerjaan</th>
@@ -45,6 +48,7 @@ export default async function DataMuridPage() {
                   <td className="px-4 py-3">{murid.tanggal_registrasi}</td>
                   <td className="px-4 py-3">{murid.jenis_kelamin}</td>
                   <td className="px-4 py-3">{murid.usia_saat_registrasi}</td>
+                  <td className="px-4 py-3">{murid.alamat_lengkap}</td>
                   <td className="px-4 py-3">{murid.kota}</td>
                   <td className="px-4 py-3">{murid.no_whatsapp}</td>
                   <td className="px-4 py-3">{murid.pekerjaan}</td>
