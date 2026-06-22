@@ -1,5 +1,7 @@
 import { getSupabaseClient } from '@/lib/supabase/client'
 
+export const dynamic = 'force-dynamic'  // ← tambahkan baris ini
+
 export default async function DataMuridPage() {
   const supabase = getSupabaseClient()
 
