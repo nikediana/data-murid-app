@@ -44,7 +44,7 @@ export default async function DataMuridPage() {
             </thead>
             <tbody className="divide-y divide-gray-200">
               {muridList?.map((murid) => (
-                <tr key={murid.nomor_registrasi} className="hover:bg-gray-50">
+                <tr key={murid.id} className="hover:bg-gray-50">
                   <td className="px-4 py-3">{murid.nomor_registrasi}</td>
                   <td className="px-4 py-3">{murid.nama_lengkap}</td>
                   <td className="px-4 py-3">{murid.tanggal_registrasi}</td>
