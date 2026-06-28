@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Typography ── */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* ── Brand Colors ── */
+  --color-primary:       #1E4FA3;
+  --color-primary-dark:  #163D80;
+  --color-secondary:     #3A74D8;
+  --color-accent:        #F5B700;
+  --color-accent-hover:  #E0A500;
+
+  /* ── Layout ── */
+  --color-background:    #F8FAFC;
+  --color-surface:       #FFFFFF;
+  --color-border:        #D9E2EC;
+
+  /* ── Text scale ── */
+  --color-text-placeholder: #94A3B8;
+  --color-text-disabled:    #CBD5E1;
+
+  /* ── Border ── */
+  --color-border-default:   #E2E8F0;
+
+  /* ── Background ── */
+  --color-background-page:  #F8FAFC;
+  --color-background-card:  #FFFFFF;
+
+  /* ── Text ── */
+  --color-text-primary:  #1E293B;
+  --color-text-secondary:#64748B;
+
+  /* ── Semantic ── */
+  --color-success:       #2E7D32;
+  --color-warning:       #ED8B00;
+  --color-error:         #D32F2F;
+
+  /* ── Status Presensi ── */
+  --color-hadir:         #2E7D32;
+  --color-izin:          #ED8B00;
+  --color-sakit:         #3A74D8;
+  --color-alpa:          #D32F2F;
+
+  /* ── Status Rekap ── */
+  --color-locked:        #52606D;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.5;
 }
+
+/* Typography scale */
+.h1 { font-size: 1.5rem;   font-weight: 700; }   /* text-2xl font-bold */
+.h2 { font-size: 1.25rem;  font-weight: 600; }   /* text-xl font-semibold */
+.h3 { font-size: 1.125rem; font-weight: 500; }   /* text-lg font-medium */
+.body-text { 
+  font-size: 1rem; 
+  line-height: 1.6;   /* leading-relaxed */
+}
+.small  { font-size: 0.875rem; }                  /* text-sm */
+.caption{ font-size: 0.75rem;  }                  /* text-xs */

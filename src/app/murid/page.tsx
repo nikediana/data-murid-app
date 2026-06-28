@@ -1,9 +1,9 @@
-import { getSupabaseClient } from '@/lib/supabase/client'
+import { createClient } from '@/lib/supabase/server'
 
 export const dynamic = 'force-dynamic'  // ← tambahkan baris ini
 
 export default async function DataMuridPage() {
-  const supabase = getSupabaseClient()
+  const supabase = await createClient()
 
   const { data: muridList, error } = await supabase
     .from('murid')
